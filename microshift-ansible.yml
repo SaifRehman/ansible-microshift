@@ -1,10 +1,8 @@
 ---
-- name: "install centos vm with httpd configured"
+- name: "create namespace"
   hosts: microshift
   vars_files:
     - vars.yml
   tasks:
     - name: "Create Namespace {{ namespacedefined }}"
-      kubernetes.core.k8s:
-        state: present
-        template: namespace.yml.j2
+      shell: "oc create namespace new"
