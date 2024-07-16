@@ -1,5 +1,5 @@
 ---
 namespacedefined: "micro"
 nameofapp: "httpd"
-port: 8080
+portnumber: 8080
 replica: 1

@@ -18,7 +18,7 @@ spec:
       - name: {{nameofapp}}
         image: httpd:latest
         ports:
-        - containerPort: {{port}}
+        - containerPort: {{portnumber}}
         volumeMounts:
         - name: config-volume
           mountPath: /usr/local/apache2/conf/httpd.conf
