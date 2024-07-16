@@ -5,7 +5,7 @@
   tasks:
     - name: Update Git repository
       git:
-        repo: git@github.com:SaifRehman/ansible-microshift.git  # Replace with your Git repository URL
+        repo: https://github.com/SaifRehman/ansible-microshift.git  # Replace with your Git repository URL
         dest: /path/to/your/local/repository  # Specify the local directory where the repository should be cloned/pulled
         version: main  # Specify the branch or commit hash if needed
         force: yes  # Ensure any local changes are overridden
