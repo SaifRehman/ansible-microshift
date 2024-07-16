@@ -14,6 +14,19 @@
     - name: Display kubectl apply result of namespace
       debug:
         var: kubectl_apply_result_namespace.stdout
+
+    - name: Create configmap YAML from template
+      template:
+        src: configmap.yml.j2
+        dest: /tmp/configmap.yaml
+    - name: "Create configmap"
+      shell: kubectl apply -f /tmp/configmap.yaml -n {{ namespacedefined }}
+      register: kubectl_apply_result_configmap
+    - name: Display kubectl apply result of namespace
+      debug:
+        var: kubectl_apply_result_configmap.stdout
+
+
     - name: Create deployment YAML from template
       template:
         src: deployment.yml.j2
