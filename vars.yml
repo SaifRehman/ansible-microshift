@@ -1,5 +1,5 @@
 ---
 namespacedefined: "micro"
-nameofapp: "httpd"
-portnumber: 8080
+nameofapp: "flask"
+portnumber: 80
 replica: 1
