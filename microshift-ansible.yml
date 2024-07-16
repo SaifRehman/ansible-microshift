@@ -10,3 +10,27 @@
         dest: /tmp/namespace.yaml
     - name: "Create Namespace {{ namespacedefined }}"
       shell: kubectl apply -f /tmp/namespace.yaml
+      register: kubectl_apply_result_namespace
+    - name: Display kubectl apply result of namespace
+      debug:
+        var: kubectl_apply_result_namespace.stdout
+    - name: Create deployment YAML from template
+      template:
+        src: deployment.yml.j2
+        dest: /tmp/deployment.yaml
+    - name: "Create deployment "
+      shell: kubectl apply -f /tmp/deployment.yaml -n {{ namespacedefined }}
+      register: kubectl_apply_result_deployment
+    - name: Display kubectl apply result of deployment
+      debug:
+        var: kubectl_apply_result_deployment.stdout
+    - name: Create service YAML from template
+      template:
+        src: service.yml.j2
+        dest: /tmp/service.yaml
+    - name: "Create service "
+      shell: kubectl apply -f /tmp/service.yaml -n {{ namespacedefined }}
+      register: kubectl_apply_result_service
+    - name: Display kubectl apply result of service creation
+      debug:
+        var: kubectl_apply_result_service.stdout
