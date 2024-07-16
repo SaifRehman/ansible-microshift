@@ -4,5 +4,9 @@
   vars_files:
     - vars.yml
   tasks:
+    - name: Create namespace YAML from template
+      template:
+        src: namespace.yml.j2
+        dest: /tmp/namespace.yaml
     - name: "Create Namespace {{ namespacedefined }}"
-      shell: "oc create namespace new"
+      shell: kubectl apply -f /tmp/namespace.yaml
