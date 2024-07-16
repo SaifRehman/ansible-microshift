@@ -4,6 +4,7 @@ metadata:
   name: httpd-config
 data:
   httpd.conf: |
+    LoadModule mpm_event_module modules/mod_mpm_event.so
     Listen 8080
     ServerName localhost
 
