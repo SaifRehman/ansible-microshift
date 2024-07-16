@@ -1,5 +1,5 @@
 ---
-namespacedefined: "micro"
+namespacedefined: "appl"
 nameofapp: "nodejs"
 portnumber: 3000
 replica: 1
