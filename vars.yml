@@ -1,6 +1,6 @@
 ---
-namespace: "httpd"
-name: "httpd"
+namespacedefined: "httpd"
+nameofapp: "httpd"
 url: "https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2"
 boot_image_size: "30Gi"
 vm_cpus_cores: 1

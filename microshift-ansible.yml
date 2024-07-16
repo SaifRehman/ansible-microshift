@@ -4,7 +4,7 @@
   vars_files:
     - vars.yml
   tasks:
-    - name: "Create Namespace {{ namespace }}"
+    - name: "Create Namespace {{ namespacedefined }}"
       kubernetes.core.k8s:
         state: present
         template: namespace.yml.j2
