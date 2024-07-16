@@ -1,5 +1,5 @@
 ---
 namespacedefined: "micro"
 nameofapp: "nodejs"
-portnumber: 30002
+portnumber: 3000
 replica: 1
